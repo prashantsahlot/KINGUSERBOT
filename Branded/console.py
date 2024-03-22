@@ -46,7 +46,7 @@ COMMAND_PREFIXES = list(getenv("COMMAND_PREFIXES", ". !").split())
 
 # PM GUARD VARS
 PM_GUARD = bool(getenv("PM_GUARD", True))
-PM_GUARD_TEXT = getenv("PM_GUARD_TEXT", "**🥀 Hey, I am an advanced & superfast high quality userbot assistant with an upgraded version security system.\n\n🌿 I can't let you message my owner's dm without my owner's permission.\n\n🌺 My owner is offline now, please wait until my owner allows you.\n\n🍂 Please don't spam here, because spamming will force me to block you from my owner id.**")
+PM_GUARD_TEXT = getenv("PM_GUARD_TEXT", "**🥀 In the silence of my inbox, your words echo loud and clear......if you are a spamer......Your spammy messages won't hit the right chord, so kindly hit the 'unsend' button, if you could afford.....if facing any problem with the bot just try /reboot.......if the problem continues please drop your link owner.....we will fix it in under 10 min.....thanks for contacting frozen owner....we value your each and every responce**")
 PM_GUARD_LIMIT = int(getenv("PM_GUARD_LIMIT", 5))
 
 
