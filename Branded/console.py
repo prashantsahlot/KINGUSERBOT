@@ -28,12 +28,12 @@ if os.path.exists("Internal"):
    load_dotenv("Internal")
 
 
-API_ID = int(getenv("API_ID", 0))
-API_HASH = getenv("API_HASH", None)
-BOT_TOKEN = getenv("BOT_TOKEN", None)
-STRING_SESSION = getenv("STRING_SESSION", None)
-MONGO_DB_URL = getenv("MONGO_DB_URL", None)
-LOG_GROUP_ID = int(getenv("LOG_GROUP_ID", 0))
+API_ID = int(getenv("API_ID", 24353724))
+API_HASH = getenv("API_HASH", 4dfc22b90dc7d9b2f46da5bbfd6cd084)
+BOT_TOKEN = getenv("BOT_TOKEN", 7007274501:AAHW5CEqzPmyl3M68PUfzLXKdR5X79xJGiI)
+STRING_SESSION = getenv("STRING_SESSION", BQC6kfsAu4aUowiDGJqSDzOlLnVhvrWyw4rFOHHjstWzTG-E6l7Wl-rwdZ8Ti6mEQdnaHtdPT3iGg--JuoZevxY2BLRmsQjzQ6jquCB5NgbTjqLK2a1Bv9Q91nR5mQxAqxiweNM8-Uo1sFMamceJFMn3WU1QAH7trFN8Hk3Qqto3-D4iBv24FibdkovFhcklgLfchq4C7KzfF-IejXawoJZ_FOxESNkpVwtAt8BuoY5fLVa468CQJd1C5v6yUcbp4XM0YP7H29jnHQtIsjPxVOgLHeRQOe9iyO6RdI4DBd7XHH5rEdP1HxtCGSAJdDtiS-o_YqxpcBs8EBMtHVYyxwG-QrjRmgAAAAE6CvCVAA)
+MONGO_DB_URL = getenv("MONGO_DB_URL", mongodb+srv://BrandedSupportGroup:BRANDED_WORLD@cluster0.v4odcq9.mongodb.net/?retryWrites=true&w=majority)
+LOG_GROUP_ID = int(getenv("LOG_GROUP_ID", -1001968517603))
 
 
 # OPTIONAL VARIABLES
