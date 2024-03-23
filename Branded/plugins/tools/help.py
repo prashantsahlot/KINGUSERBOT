@@ -10,7 +10,7 @@ from ...modules.helpers.inline import *
 from ...modules.helpers.wrapper import *
 
 
-@app.on_message(cdx(["help"]))
+@app.on_message(cdx([".help"]))
 @sudo_users_only
 async def inline_help_menu(client, message):
     image = None
