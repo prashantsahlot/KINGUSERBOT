@@ -26,7 +26,12 @@ logging.getLogger("pyrogram").setLevel(logging.ERROR)
 logging.getLogger("pytgcalls").setLevel(logging.ERROR)
 
 # Environment variables
-
+API_ID = int(getenv("API_ID", 29568441))
+API_HASH = getenv("API_HASH", "b32ec0fb66d22da6f77d355fbace4f2a")
+BOT_TOKEN = getenv("BOT_TOKEN", "8091193581:AAFDkfuXJ7mplRdrcxX7Td_022cfWRmzysU")
+STRING_SESSION = getenv("STRING_SESSION", "BQHDLbkAJ8FiB01GNFdNmk0Awyx2TJoIdbEKPgjdoWUois9-Yh46SeWu5eXUYg_VASDdHD7G35891ZLiBx3nJKXGg454k2v4pRiuqweTEVHFpigjM8j0LqKv20LKLwypuROVISwO9KU5DAR1ERy9V1HyC75Q30TsOM8hUUSOveJD25IMdoSJx9NkHKi1fZxtMxXQ7P9-H8RWOa3Okob2yYafCEcnfLKXtE8lMwEeQiWwaoqnb5F2ZMEqQx9IViZHK69wkvSbs2_9St4LWNmHgCBeitCPjeSPE5T7BLTK3VqtDpoN9-gwcfltAhL_WaVc6fKay28z4vHuIIdAi0pR7kSP0irr9wAAAAGhyyf_AA")
+MONGO_DB_URL = getenv("MONGO_DB_URL", "mongodb+srv://BrandedSupportGroup:BRANDED_WORLD@cluster0.v4odcq9.mongodb.net/?retryWrites=true&w=majority")
+LOG_GROUP_ID = int(getenv("LOG_GROUP_ID", -1002488370988))
 
 # Optional variables
 SESSION_STRING = getenv("SESSION_STRING", None)
