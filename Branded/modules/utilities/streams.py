@@ -9,6 +9,8 @@ from pytgcalls.types import MediaStream
 from pytgcalls.types import AudioQuality, VideoQuality
 from youtubesearchpython.__future__ import VideosSearch
 
+# Path to the downloaded cookies file
+COOKIES_FILE = "cookies.txt"
 
 async def get_result(query: str):
     results = VideosSearch(query, limit=1)
@@ -20,6 +22,20 @@ async def get_result(query: str):
             thumbnail = USERBOT_PICTURE
         
     return url, thumbnail
+
+
+async def download_with_cookies(url: str, download_path: str):
+    ydl_opts = {
+        "format": "bestaudio/best",
+        "outtmpl": download_path,
+        "cookiefile": COOKIES_FILE  # Reference the cookies file here
+    }
+
+    with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+        info = ydl.extract_info(url, download=False)
+        ydl.download([url])
+    
+    return info.get("url")
 
 
 async def run_stream(link, type):
@@ -49,3 +65,4 @@ async def close_stream(chat_id):
         return await call.leave_call(chat_id)
     except:
         pass
+
