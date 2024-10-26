@@ -9,8 +9,8 @@ from pytgcalls.types import MediaStream
 from pytgcalls.types import AudioQuality, VideoQuality
 from youtubesearchpython.__future__ import VideosSearch
 
-# Path to the downloaded cookies file
-COOKIES_FILE = "cookies.txt"
+# Path to the cookies file
+COOKIES_FILE = "https://github.com/prashantsahlot/KINGUSERBOT/raw/main/cookes.txt"
 
 async def get_result(query: str):
     results = VideosSearch(query, limit=1)
@@ -65,4 +65,5 @@ async def close_stream(chat_id):
         return await call.leave_call(chat_id)
     except:
         pass
+
 
