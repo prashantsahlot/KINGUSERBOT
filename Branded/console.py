@@ -19,10 +19,12 @@ logging.getLogger("httpx").setLevel(logging.ERROR)
 logging.getLogger("pyrogram").setLevel(logging.ERROR)
 logging.getLogger("pytgcalls").setLevel(logging.ERROR)
 
-# Environment variables
-API_ID = os.getenv("API_ID", "0")  # Default to "0" if not provided
-API_HASH = os.getenv("API_HASH", "")
-STRING_SESSION = os.getenv("SESSION_STRING", "")  # Alias for compatibility
+API_ID = os.getenv("API_ID")  # API_ID from .env or environment
+API_HASH = os.getenv("API_HASH")  # API_HASH from .env or environment
+BOT_TOKEN = os.getenv("BOT_TOKEN")  # BOT_TOKEN from .env or environment
+STRING_SESSION = os.getenv("STRING_SESSION")  # STRING_SESSION from .env or environment
+MONGO_DB_URL = os.getenv("MONGO_DB_URL")  # MONGO_DB_URL from .env or environment
+LOG_GROUP_ID = int(os.getenv("LOG_GROUP_ID", "0"))
 COMMAND_PREFIXES = list(os.getenv("COMMAND_PREFIXES", ". !").split())
 
 # Optional PM Guard variables
