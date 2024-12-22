@@ -22,7 +22,7 @@ logging.getLogger("pytgcalls").setLevel(logging.ERROR)
 API_ID = os.getenv("API_ID")  # API_ID from .env or environment
 API_HASH = os.getenv("API_HASH")  # API_HASH from .env or environment
 BOT_TOKEN = os.getenv("BOT_TOKEN")  # BOT_TOKEN from .env or environment
-STRING_SESSION = os.getenv("STRING_SESSION")  # STRING_SESSION from .env or environment
+SESSION_STRING = os.getenv("STRING_SESSION")  # STRING_SESSION from .env or environment
 MONGO_DB_URL = os.getenv("MONGO_DB_URL")  # MONGO_DB_URL from .env or environment
 LOG_GROUP_ID = int(os.getenv("LOG_GROUP_ID", "0"))
 COMMAND_PREFIXES = list(os.getenv("COMMAND_PREFIXES", ". !").split())
