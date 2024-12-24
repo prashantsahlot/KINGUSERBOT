@@ -1,41 +1,63 @@
 import os
 import time
 import logging
+
+from os import getenv
+from dotenv import load_dotenv
 from logging.handlers import RotatingFileHandler
 
-# Configure logging
+
 logging.basicConfig(
     format="[%(asctime)s]:[%(levelname)s]:[%(name)s]:: %(message)s",
     level=logging.INFO,
     datefmt="%H:%M:%S",
     handlers=[
-        RotatingFileHandler("logs.txt", maxBytes=(1024 * 1024 * 5), backupCount=10),
+        RotatingFileHandler(
+            "logs.txt", maxBytes=(1024 * 1024 * 5), backupCount=10
+        ),
         logging.StreamHandler(),
     ],
 )
 
-# Set logging levels for various libraries
 logging.getLogger("httpx").setLevel(logging.ERROR)
 logging.getLogger("pyrogram").setLevel(logging.ERROR)
 logging.getLogger("pytgcalls").setLevel(logging.ERROR)
 
-API_ID = os.getenv("API_ID")  # API_ID from .env or environment
-API_HASH = os.getenv("API_HASH")  # API_HASH from .env or environment
-BOT_TOKEN = os.getenv("BOT_TOKEN")  # BOT_TOKEN from .env or environment
-STRING_SESSION = os.getenv("STRING_SESSION")  # STRING_SESSION from .env or environment
-MONGO_DB_URL = os.getenv("MONGO_DB_URL")  # MONGO_DB_URL from .env or environment
-LOG_GROUP_ID = int(os.getenv("LOG_GROUP_ID", "0"))
-COMMAND_PREFIXES = list(os.getenv("COMMAND_PREFIXES", ". !").split())
 
-# Optional PM Guard variables
-PM_GUARD = bool(os.getenv("PM_GUARD", True))
-PM_GUARD_TEXT = os.getenv("PM_GUARD_TEXT", "Default PM Guard Text")
-PM_GUARD_LIMIT = int(os.getenv("PM_GUARD_LIMIT", 5))
+if os.path.exists("Internal"):
+   load_dotenv("Internal")
 
-# Userbot default image
-USERBOT_PICTURE = os.getenv("USERBOT_PICTURE", "https://telegra.ph/file/8c81173143a4923516c18.jpg")
 
-# Don't Edit This Code From This Line
+API_ID = int(getenv("API_ID", 0))
+API_HASH = getenv("API_HASH", None)
+BOT_TOKEN = getenv("BOT_TOKEN", None)
+STRING_SESSION = getenv("STRING_SESSION", None)
+MONGO_DB_URL = getenv("MONGO_DB_URL", None)
+LOG_GROUP_ID = int(getenv("LOG_GROUP_ID", 0))
+
+
+# OPTIONAL VARIABLES
+SESSION_STRING = getenv("SESSION_STRING", None)
+COMMAND_PREFIXES = list(getenv("COMMAND_PREFIXES", ". !").split())
+
+
+
+# OTHERS VARIABLES
+
+# PM GUARD VARS
+PM_GUARD = bool(getenv("PM_GUARD", True))
+PM_GUARD_TEXT = getenv("PM_GUARD_TEXT", "**🥀 Hey, I am an advanced & superfast high quality userbot assistant with an upgraded version security system.\n\n🌿 I can't let you message my owner's dm without my owner's permission.\n\n🌺 My owner is offline now, please wait until my owner allows you.\n\n🍂 Please don't spam here, because spamming will force me to block you from my owner id.**")
+PM_GUARD_LIMIT = int(getenv("PM_GUARD_LIMIT", 5))
+
+
+
+# USERBOT DEFAULT IMAGE
+USERBOT_PICTURE = getenv("USERBOT_PICTURE", "https://te.legra.ph/file/11cfa74175b590014bd16.jpg")
+
+
+
+# Don't Edit This Codes From This Line
+
 LOGGER = logging.getLogger("Branded")
 runtime = time.time()
 
@@ -45,7 +67,8 @@ PM_LIMIT = {}
 PLUGINS = {}
 SUDOERS = []
 
+
 COMMAND_HANDLERS = []
 for x in COMMAND_PREFIXES:
     COMMAND_HANDLERS.append(x)
-COMMAND_HANDLERS.append('.')
+COMMAND_HANDLERS.append('')
