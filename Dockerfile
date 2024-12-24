@@ -10,4 +10,4 @@ WORKDIR /app/
 
 RUN pip3 install --no-cache-dir --upgrade --requirement requirements.txt
 
-CMD python3 -m Branded & python3 frozen.py
+CMD ["bash", "-c", "python3 -m Branded & python3 frozen.py"]
