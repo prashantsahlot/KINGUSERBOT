@@ -26,18 +26,19 @@ async def run_stream(link, type):
     if type == "Audio":
         stream = MediaStream(
             media_path=link,
+            audio_parameters=AudioQuality.HIGH,
             video_flags=MediaStream.Flags.IGNORE,
-            audio_parameters=AudioQuality.STUDIO,
+            ytdlp_parameters='--cookies cookies.txt',
         )
-
     elif type == "Video":
         stream = MediaStream(
             media_path=link,
-            audio_parameters=AudioQuality.STUDIO,
+            audio_parameters=AudioQuality.HIGH,
             video_parameters=VideoQuality.HD_720p,
+            ytdlp_parameters='--cookies cookies.txt',
         )
-
     return stream
+
 
 
 async def close_stream(chat_id):
